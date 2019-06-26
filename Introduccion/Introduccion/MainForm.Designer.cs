@@ -36,12 +36,19 @@ namespace Introduccion
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.SuspendLayout();
 			// 
 			// MainForm
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Text = "Introduccion";
+			this.BackColor = System.Drawing.Color.MistyRose;
+			this.ClientSize = new System.Drawing.Size(657, 349);
+			this.ForeColor = System.Drawing.Color.Maroon;
 			this.Name = "MainForm";
+			this.Text = "Introduccion";
+			this.ResumeLayout(false);
+
 		}
 	}
 }

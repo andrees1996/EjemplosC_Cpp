@@ -1,0 +1,8 @@
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\bin\Debug\Introduccion.exe.config
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\bin\Debug\Introduccion.exe
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\bin\Debug\Introduccion.pdb
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\obj\Debug\Introduccion.csprojResolveAssemblyReference.cache
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\obj\Debug\Introduccion.MainForm.resources
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\obj\Debug\Introduccion.csproj.GenerateResource.Cache
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\obj\Debug\Introduccion.exe
+C:\temp\EjemplosC_Cpp\Introduccion\Introduccion\obj\Debug\Introduccion.pdb
