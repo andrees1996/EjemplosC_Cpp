@@ -1,25 +1,17 @@
-#include <iostream>
-#include<ctype.h>
-#include<string.h>
-
+#include<iostream>
+extern int valor; //variable externa
+const float PI =3.141516; //variable constante
 using namespace std;
+
+int variable_global;  //varibale global
+
 
 int main()
 {
-	
-	char letra;
-
-	
-	for( ;letra !='A';)
+	int i ; //variable local 
+	for (int i =0; i<3 ; i++)
 	{
-		system("cls");
-	cout<<"ingrese la letra A "<< endl;	
-	cin >> letra;	
-	if(letra =='a')
-		{
-			letra= toupper(letra);
-		}
+		int j; //variable de bloque
 	}
-
-	
+	return 0;
 }

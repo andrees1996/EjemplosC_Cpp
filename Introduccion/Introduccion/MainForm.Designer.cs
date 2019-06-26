@@ -43,10 +43,11 @@ namespace Introduccion
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MistyRose;
-			this.ClientSize = new System.Drawing.Size(657, 349);
+			this.ClientSize = new System.Drawing.Size(502, 349);
 			this.ForeColor = System.Drawing.Color.Maroon;
 			this.Name = "MainForm";
 			this.Text = "Introduccion";
+			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.ResumeLayout(false);
 
 		}
