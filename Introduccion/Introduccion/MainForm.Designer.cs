@@ -14,8 +14,12 @@ namespace Introduccion
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+		private System.Windows.Forms.DataGridView dgvLog;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Log;
+		private System.Windows.Forms.Button btnAñadirLog;
+		private System.Windows.Forms.Button btnLeerDirectorio;
+		private System.Windows.Forms.TextBox txtDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -38,25 +42,64 @@ namespace Introduccion
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.dgvLog = new System.Windows.Forms.DataGridView();
+			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Log = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnAñadirLog = new System.Windows.Forms.Button();
+			this.btnLeerDirectorio = new System.Windows.Forms.Button();
+			this.txtDirectorio = new System.Windows.Forms.TextBox();
+			((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dataGridView1
+			// dgvLog
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.nombre});
-			this.dataGridView1.Location = new System.Drawing.Point(41, 32);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(295, 196);
-			this.dataGridView1.TabIndex = 0;
+			this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.Tipo,
+			this.Log});
+			this.dgvLog.Location = new System.Drawing.Point(12, 78);
+			this.dgvLog.Name = "dgvLog";
+			this.dgvLog.Size = new System.Drawing.Size(283, 259);
+			this.dgvLog.TabIndex = 0;
+			this.dgvLog.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DgvLogMouseDoubleClick);
 			// 
-			// nombre
+			// Tipo
 			// 
-			this.nombre.HeaderText = "Nombre Estudiante";
-			this.nombre.Name = "nombre";
+			this.Tipo.HeaderText = "Tipo Log";
+			this.Tipo.Name = "Tipo";
+			this.Tipo.ReadOnly = true;
+			// 
+			// Log
+			// 
+			this.Log.HeaderText = "Descripcion";
+			this.Log.Name = "Log";
+			// 
+			// btnAñadirLog
+			// 
+			this.btnAñadirLog.Location = new System.Drawing.Point(338, 37);
+			this.btnAñadirLog.Name = "btnAñadirLog";
+			this.btnAñadirLog.Size = new System.Drawing.Size(135, 23);
+			this.btnAñadirLog.TabIndex = 1;
+			this.btnAñadirLog.Text = "Añadir Log";
+			this.btnAñadirLog.UseVisualStyleBackColor = true;
+			this.btnAñadirLog.Click += new System.EventHandler(this.BtnAñadirLogClick);
+			// 
+			// btnLeerDirectorio
+			// 
+			this.btnLeerDirectorio.Location = new System.Drawing.Point(338, 92);
+			this.btnLeerDirectorio.Name = "btnLeerDirectorio";
+			this.btnLeerDirectorio.Size = new System.Drawing.Size(135, 23);
+			this.btnLeerDirectorio.TabIndex = 2;
+			this.btnLeerDirectorio.Text = "Leer Drectorio";
+			this.btnLeerDirectorio.UseVisualStyleBackColor = true;
+			this.btnLeerDirectorio.Click += new System.EventHandler(this.BtnLeerDirectorioClick);
+			// 
+			// txtDirectorio
+			// 
+			this.txtDirectorio.Location = new System.Drawing.Point(13, 37);
+			this.txtDirectorio.Name = "txtDirectorio";
+			this.txtDirectorio.Size = new System.Drawing.Size(282, 20);
+			this.txtDirectorio.TabIndex = 3;
 			// 
 			// MainForm
 			// 
@@ -64,13 +107,18 @@ namespace Introduccion
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MistyRose;
 			this.ClientSize = new System.Drawing.Size(502, 349);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.txtDirectorio);
+			this.Controls.Add(this.btnLeerDirectorio);
+			this.Controls.Add(this.btnAñadirLog);
+			this.Controls.Add(this.dgvLog);
 			this.ForeColor = System.Drawing.Color.Maroon;
 			this.Name = "MainForm";
 			this.Text = "Introduccion";
 			this.Load += new System.EventHandler(this.MainFormLoad);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.DoubleClick += new System.EventHandler(this.MainFormDoubleClick);
+			((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 	}
