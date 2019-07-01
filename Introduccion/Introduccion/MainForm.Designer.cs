@@ -14,6 +14,8 @@ namespace Introduccion
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -36,7 +38,25 @@ namespace Introduccion
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.nombre});
+			this.dataGridView1.Location = new System.Drawing.Point(41, 32);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(295, 196);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// nombre
+			// 
+			this.nombre.HeaderText = "Nombre Estudiante";
+			this.nombre.Name = "nombre";
 			// 
 			// MainForm
 			// 
@@ -44,10 +64,12 @@ namespace Introduccion
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MistyRose;
 			this.ClientSize = new System.Drawing.Size(502, 349);
+			this.Controls.Add(this.dataGridView1);
 			this.ForeColor = System.Drawing.Color.Maroon;
 			this.Name = "MainForm";
 			this.Text = "Introduccion";
 			this.Load += new System.EventHandler(this.MainFormLoad);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
