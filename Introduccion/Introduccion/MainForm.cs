@@ -73,6 +73,11 @@ namespace Introduccion
 			string parent = infordirectorio.Parent.ToString();
 			string root = infordirectorio.Root.ToString();
 			
+			EscribirLog("info", fechacrear,dgvLog);
+			EscribirLog("info", nombre,dgvLog);
+			EscribirLog("info", parent,dgvLog);
+			EscribirLog("info", root,dgvLog);
+			
 				
 			}
 			catch (Exception error)
@@ -84,7 +89,13 @@ namespace Introduccion
 		
 		void EscribirLog(string tipo , string log ,DataGridView dgv)
 		{
+			int posnewLog = dgvLog.Rows.Add();
 			
+			
+	
+				dgvLog.Rows [posnewLog].Cells[0].Value = log;
+				dgvLog.Rows [posnewLog].Cells[1].Value = log;
+				
 		}
 		/*void DgvLogDoubleClick(object sender, MouseEventArgs e)
 		{
