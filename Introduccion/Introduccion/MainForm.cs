@@ -73,39 +73,70 @@ namespace Introduccion
 			string parent = infordirectorio.Parent.ToString();
 			string root = infordirectorio.Root.ToString();
 			
-			EscribirLog("info", fechacrear,dgvLog);
-			EscribirLog("info", nombre,dgvLog);
-			EscribirLog("info", parent,dgvLog);
-			EscribirLog("info", root,dgvLog);
 			
-				
-			}
-			catch (Exception error)
+			
+			
+			
+			EscribirLog("info","Leyendo Directorio" +  fechacrear,dgvLog);
+			EscribirLog("info","Leyendo Directorio" + nombre,dgvLog);
+			EscribirLog("info","Leyendo Directorio" + parent,dgvLog);
+			EscribirLog("info","Leyendo Directorio" + root,dgvLog);	
+			
+			FileInfo[] archivosDeDirectorio =  infordirectorio.GetFiles();
+			
+			foreach(FileInfo archivo in archivosDeDirectorio)
 			{
-				//cuando hay un error
-				
+				EscribirLog("info","Archivo" + archivo.CreationTime,dgvLog);	
+				EscribirLog("info","Archivo" + archivo.FullName,dgvLog);
+				EscribirLog("info","Archivo" + archivo.Extension,dgvLog);
+				EscribirLog("info","Archivo" + archivo.LastAccessTime,dgvLog);
+				EscribirLog("info","Archivo" + archivo.IsReadOnly,dgvLog);
 			}
+			}
+			
+			}
+			catch(Exception error){
+				EscribirLog("error",error.ToString(),dgvLog);
+			}
+			
 		}
-		
-		void EscribirLog(string tipo , string log ,DataGridView dgv)
+void EscribirLog(string tipo , string log ,DataGridView dgv)
 		{
 			int posnewLog = dgvLog.Rows.Add();
 			
+			//agregar una fila
+			//devolver la posicion de la nueva fila
 			
 	
 				dgvLog.Rows [posnewLog].Cells[0].Value = log;
 				dgvLog.Rows [posnewLog].Cells[1].Value = log;
 				
+				if(tipo=="error")
+				{
+					dgv.Rows[posnewLog].Cells[0].Style.BackColor=Color.Red;
+					
+				}
+				else	
+				{
+					dgv.Rows[posnewLog].Cells[0].Style.BackColor=Color.AliceBlue;
+				}
+				
 		}
-		/*void DgvLogDoubleClick(object sender, MouseEventArgs e)
+	/*	void DgvLogCellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+	
+		}*/
+		void DgvLogDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			
+			
+			DataGridViewTextBoxCell celdaTipo = (DataGridViewTextBoxCell)dgvLog.Rows[e.RowIndex].Cells[0];
+			DataGridViewTextBoxCell celdaLog = (DataGridViewTextBoxCell)dgvLog.Rows[e.RowIndex].Cells[1];
+			
 			if (celdaTipo.Value != null)
 			{
 				
 			}
-			DataGridViewTextBoxCell celdaTipo = (DataGridViewTextBoxCell)dgvLog.Rows[e.RowIndex].Cells[0];
-			DataGridViewTextBoxCell celdaLog = (DataGridViewTextBoxCell)dgvLog.Rows[e.RowIndex].Cells[1];
-			
 			string log = celdaLog.Value.ToString();
 			string tipo = celdaTipo.Value.ToString();
 			
@@ -113,10 +144,43 @@ namespace Introduccion
 			//titulo
 			//botones
 			//icon
+			MessageBoxIcon 	icono;
 			
-			MessageBoxIcon 	icono = MessageBoxIcon.Information;
+			if(tipo =="error")
+			{
+				icono = MessageBoxIcon.Error;
+			}
+			else
+			{
+				icono = MessageBoxIcon.Information;
+			}
+			
 			MessageBoxButtons botones = MessageBoxButtons.OK;
-				MessageBox.Show(log, tipo , botones , icono);
-		}*/
-	}
+			MessageBox.Show(log, tipo , botones , icono);
+		}
+		void BtnListarDirectorioClick(object sender, EventArgs e)
+		{
+			try 
+			{
+				string path = txtListarDirectorio.Text;
+				string[] arregloDirectorio = Directory.GetDirectories(@path);
+				int numeroDirectorios = arregloDirectorio.Length;
+				
+				EscribirLog("info", "numero Directorios" + numeroDirectorios.ToString(),dgvLog);
+				foreach(string directorio in arregloDirectorio)
+				{
+					EscribirLog("info", "Directorio: " + directorio,dgvLog);
+				}
+			}
+			catch(Exception error){
+				EscribirLog("error",error.ToString(),dgvLog);
+			}
+		}
+		
+			
+		}
 }
+
+	
+
+

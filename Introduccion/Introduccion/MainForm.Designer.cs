@@ -20,6 +20,8 @@ namespace Introduccion
 		private System.Windows.Forms.Button btnAñadirLog;
 		private System.Windows.Forms.Button btnLeerDirectorio;
 		private System.Windows.Forms.TextBox txtDirectorio;
+		private System.Windows.Forms.TextBox txtListarDirectorio;
+		private System.Windows.Forms.Button btnListarDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -48,6 +50,8 @@ namespace Introduccion
 			this.btnAñadirLog = new System.Windows.Forms.Button();
 			this.btnLeerDirectorio = new System.Windows.Forms.Button();
 			this.txtDirectorio = new System.Windows.Forms.TextBox();
+			this.txtListarDirectorio = new System.Windows.Forms.TextBox();
+			this.btnListarDirectorio = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,7 +63,7 @@ namespace Introduccion
 			this.Log});
 			this.dgvLog.Location = new System.Drawing.Point(12, 78);
 			this.dgvLog.Name = "dgvLog";
-			this.dgvLog.Size = new System.Drawing.Size(283, 259);
+			this.dgvLog.Size = new System.Drawing.Size(291, 232);
 			this.dgvLog.TabIndex = 0;
 			this.dgvLog.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DgvLogMouseDoubleClick);
 			// 
@@ -101,12 +105,31 @@ namespace Introduccion
 			this.txtDirectorio.Size = new System.Drawing.Size(282, 20);
 			this.txtDirectorio.TabIndex = 3;
 			// 
+			// txtListarDirectorio
+			// 
+			this.txtListarDirectorio.Location = new System.Drawing.Point(13, 13);
+			this.txtListarDirectorio.Name = "txtListarDirectorio";
+			this.txtListarDirectorio.Size = new System.Drawing.Size(100, 20);
+			this.txtListarDirectorio.TabIndex = 4;
+			// 
+			// btnListarDirectorio
+			// 
+			this.btnListarDirectorio.Location = new System.Drawing.Point(338, 139);
+			this.btnListarDirectorio.Name = "btnListarDirectorio";
+			this.btnListarDirectorio.Size = new System.Drawing.Size(135, 23);
+			this.btnListarDirectorio.TabIndex = 5;
+			this.btnListarDirectorio.Text = "Listar Directorio";
+			this.btnListarDirectorio.UseVisualStyleBackColor = true;
+			this.btnListarDirectorio.Click += new System.EventHandler(this.BtnListarDirectorioClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MistyRose;
 			this.ClientSize = new System.Drawing.Size(502, 349);
+			this.Controls.Add(this.btnListarDirectorio);
+			this.Controls.Add(this.txtListarDirectorio);
 			this.Controls.Add(this.txtDirectorio);
 			this.Controls.Add(this.btnLeerDirectorio);
 			this.Controls.Add(this.btnAñadirLog);
